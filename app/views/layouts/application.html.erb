@@ -8,11 +8,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class='<%= controller.controller_name %>'>
 	  	<a href='/'>home</a>
 	  	<a href='/about'>about</a>
 	  	<a href='/contacts'>contacts</a>
 	  	<a href='/bbs'>bbs</a>
+	  	<a href='/products'>products</a>
 		<%= yield %>
   </body>
 </html>
