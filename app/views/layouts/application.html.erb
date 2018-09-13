@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ROR</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body class='<%= controller.controller_name %>'>
-	  	<a href='/'>home</a>
-	  	<a href='/about'>about</a>
-	  	<a href='/contacts'>contacts</a>
-	  	<a href='/bbs'>bbs</a>
-	  	<a href='/products'>products</a>
-		<%= yield %>
-  </body>
+<head>
+  <title>Pragprog Books Online Store</title>
+  <%= stylesheet_link_tag "application", media: "all",
+    "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= controller.controller_name %>">
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Pragmatic Bookshelf" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <ul>
+        <li><a href='/'>home</a></li>
+	  	<li><a href='/about'>about</a></li>
+	  	<li><a href='/contacts'>contacts</a></li>
+	  	<li><a href='/bbs'>bbs</a></li>
+	  	<li><a href='/products'>products</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
+</body>
 </html>
