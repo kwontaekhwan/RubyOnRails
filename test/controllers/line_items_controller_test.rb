@@ -12,6 +12,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @line_item = line_items(:one)
   end
+
 =begin
   test "should get index" do
     get :index
